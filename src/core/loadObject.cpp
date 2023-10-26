@@ -30,7 +30,7 @@ bool Engine3D::loadObjectFromFile(std::string filename)
         if (line[0] == 'f') {
             int f[3];
             s >> trash >> f[0] >> f[1] >> f[2];
-            triangle tri = {verts[f[0] - 1], verts[f[1] - 1], verts[f[2] - 1]}; // - 1 because blender's index starts at 1
+            triangle tri = {verts[f[0] - 1], verts[f[1] - 1], verts[f[2] - 1]};
             object.append(tri);
         }
     }
