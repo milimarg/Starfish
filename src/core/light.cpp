@@ -2,7 +2,7 @@
 #include "../../includes/math/vector.hpp"
 #include "../../includes/core/engineCore.hpp"
 
-sf::Color getColor(float lum)
+static sf::Color getColor(float lum)
 {
     int pixelBw = (int)(13.0f * lum);
 
@@ -20,9 +20,12 @@ sf::Color getColor(float lum)
 void Engine3D::applyLightOnTriangle(vector3 &normal, triangle &tri)
 {
     static vector3 lightDirection = vector3(0.0f, 0.0f, -1.0f).normal();
+    float dp = std::max(0.1f, normal.dotProduct(lightDirection));
 
-    float dp = normal.product(lightDirection);
     Math::applyMatrixOnTriangle(tri, projectionMatrix);
     tri.color = getColor(dp);
+    for (int i = 0; i < TRIANGLE_POINTS; i++) {
+        tri.points[i] /= tri.points[i].w;
+    }
     Math::scaleTriangleToWindowSize(tri, windowSize);
 }
