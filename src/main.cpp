@@ -8,7 +8,7 @@ int main(void)
     sf::RenderWindow window(sf::VideoMode(1920, 1080), "3D Engine");
     Engine3D engine(window);
 
-    engine.loadObjectFromFile("./assets/teapot.obj");
+    engine.loadObjectFromFile("./assets/halflife/halflifeCrowbar.obj");
     while (window.isOpen()) {
         while (window.pollEvent(event)) {
             if (event.type == sf::Event::Closed) {

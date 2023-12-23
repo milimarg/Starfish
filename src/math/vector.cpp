@@ -1,4 +1,5 @@
 #include <cmath>
+#include <math.h>
 #include "../../includes/math/vector.hpp"
 
 vector3::vector3()
@@ -15,7 +16,7 @@ vector3::vector3(float x, float y, float z)
 
 float vector3::length()
 {
-    return std::sqrtf(this->dotProduct(*this));
+    return sqrtf(this->dotProduct(*this));
 }
 
 vector3 vector3::normal()

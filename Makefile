@@ -9,7 +9,7 @@ SRC	=	src/main.cpp \
 
 OBJ	=	$(SRC:.cpp=.o)
 
-NAME	=	3Dengine
+NAME	=	3DEngine
 
 CPPFLAGS	=	-std=c++20
 

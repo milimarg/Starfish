@@ -1,4 +1,5 @@
 #include <SFML/System.hpp>
+#include <math.h>
 #include "../../includes/core/visionStruct.hpp"
 #include "../../includes/math/vector.hpp"
 #include "../../includes/object/object.hpp"

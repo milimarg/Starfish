@@ -28,13 +28,43 @@ void Engine3D::update()
     static Matrix_4x4 rotationX;
     static Matrix_4x4 rotationZ;
     float theta = clock.getElapsedTime().asSeconds();
+    static sf::Vector3f move = {0.0f, 0.0f, 20.0f};
+    Matrix_4x4 translation;
 
     window.clear();
     rotationZ.applyRotationZ(theta);
     rotationX.applyRotationX(theta);
     matWorld.createIdentity();
     matWorld = rotationZ.multiplyToMatrix(rotationX);
-    matWorld = matWorld.multiplyToMatrix(matTranslation);
+
+    // X MOVE
+
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::A)) {
+        move.x -= 0.1;
+    }
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Z)) {
+        move.x += 0.1;
+    }
+
+    // Y MOVE
+
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Q)) {
+        move.y -= 0.1;
+    }
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::S)) {
+        move.y += 0.1;
+    }
+
+    // Z MOVE
+
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::W)) {
+        move.z -= 0.1;
+    }
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::X)) {
+        move.z += 0.1;
+    }
+    translation.applyTranslation(move.x, move.y, move.z);
+    matWorld = matWorld.multiplyToMatrix(translation);
 }
 
 void Engine3D::draw()
