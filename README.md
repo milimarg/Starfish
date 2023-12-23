@@ -10,10 +10,10 @@ Minimalistic 3D Engine written using a C++ Graphics Library (SFML).
 - [ ] clipping
 - [ ] apply textures
 
-Hold `D` to display the triangles mesh. \
+Hold `D` to display triangles mesh. \
 Use `A` and `Z` to move on X axis. \
 Use `Q` and `S` to move on Y axis. \
-Use `W` and `X` to move on Z axis. \
+Use `W` and `X` to move on Z axis.
 
 ----
 
