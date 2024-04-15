@@ -1,4 +1,4 @@
-# 3DEngine
+# Starfish
 
 Minimalistic 3D Engine written using a C++ Graphics Library (SFML).
 
