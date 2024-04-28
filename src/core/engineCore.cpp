@@ -40,28 +40,28 @@ void Engine3D::update()
     // X MOVE
 
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::A)) {
-        move.x -= 0.1;
+        move.x -= 1;
     }
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Z)) {
-        move.x += 0.1;
+        move.x += 1;
     }
 
     // Y MOVE
 
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Q)) {
-        move.y -= 0.1;
+        move.y -= 1;
     }
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::S)) {
-        move.y += 0.1;
+        move.y += 1;
     }
 
     // Z MOVE
 
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::W)) {
-        move.z -= 0.1;
+        move.z -= 1;
     }
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::X)) {
-        move.z += 0.1;
+        move.z += 1;
     }
     translation.applyTranslation(move.x, move.y, move.z);
     matWorld = matWorld.multiplyToMatrix(translation);

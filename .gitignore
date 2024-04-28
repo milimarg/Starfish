@@ -1,5 +1,5 @@
 *.out
 *.o
-3DEngine
 *.log
 .idea
+starfish

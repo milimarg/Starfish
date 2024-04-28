@@ -2,7 +2,7 @@
 #include <SFML/System.hpp>
 #include <iostream>
 #include <fstream>
-#include <strstream>
+#include <sstream>
 #include "../../includes/core/engineCore.hpp"
 
 bool Engine3D::loadObjectFromFile(std::string filename)
@@ -20,7 +20,7 @@ bool Engine3D::loadObjectFromFile(std::string filename)
 
     while (!f.eof()) {
         f.getline(line, MAX_CONFIG_FILE_LINE_LENGTH);
-        std::strstream s;
+        std::stringstream s;
         s << line;
         if (line[0] == 'v') {
             vector3 v;

@@ -9,11 +9,11 @@ SRC	=	src/main.cpp \
 
 OBJ	=	$(SRC:.cpp=.o)
 
-NAME	=	3DEngine
+NAME	=	starfish
 
 CPPFLAGS	=	-std=c++20
 
-SFMLFLAGS	=	-L/opt/homebrew/Cellar/sfml/2.6.0/lib -lsfml-graphics -lsfml-system -lsfml-window
+SFMLFLAGS	=	-lsfml-graphics -lsfml-system -lsfml-window
 
 all: $(NAME)
 
